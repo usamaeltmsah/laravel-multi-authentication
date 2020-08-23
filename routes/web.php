@@ -22,12 +22,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group(['prefix' => 'admin', 'as' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']],
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']],
 function(){
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
 
-Route::group(['prefix' => 'author', 'as' => 'author', 'namespace' => 'Author', 'middleware' => ['auth', 'author']],
+Route::group(['prefix' => 'author', 'as' => 'author.', 'namespace' => 'Author', 'middleware' => ['auth', 'author']],
 function(){
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
